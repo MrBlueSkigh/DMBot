@@ -1,6 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+require('dotenv').config();
 
 const { createConnection } = require('mysql');
 const { Console } = require('winston/lib/winston/transports');
@@ -22,7 +23,7 @@ var dateIdeas = Array();
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token: auth.token,
+   token: process.env.SECRET_TOKEN,
    autorun: true
 });
 bot.on('ready', function (evt) {
