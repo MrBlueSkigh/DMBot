@@ -7,9 +7,9 @@ const { createConnection } = require('mysql');
 const { Console } = require('winston/lib/winston/transports');
 const database = createConnection({
     host: 'localhost',
-    user: 'dmbot',
-    password: 'dmbot',
-    database: 'dmbot_db',
+    user: process.env.DBUSER_NAME,
+    password: process.env.DBUSER_PASS,
+    database: 'dmbot',
 });
 
 // Configure logger settings
